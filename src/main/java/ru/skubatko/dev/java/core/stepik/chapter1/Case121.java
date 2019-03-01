@@ -1,4 +1,4 @@
-package ru.skubatko.dev.java.core.stepik.chapter1.case121;
+package ru.skubatko.dev.java.core.stepik.chapter1;
 
 public class Case121 {
 
