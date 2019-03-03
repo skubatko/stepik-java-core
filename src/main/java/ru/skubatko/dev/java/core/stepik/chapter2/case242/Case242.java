@@ -31,14 +31,14 @@ public class Case242 {
             }
 
             if (a1Idx < a1Size) {
-                    result[i] = a1[a1Idx];
-                    a1Idx++;
-                    continue;
+                result[i] = a1[a1Idx];
+                a1Idx++;
+                continue;
             }
 
             if (a2Idx < a2Size) {
-                    result[i] = a2[a2Idx];
-                    a2Idx++;
+                result[i] = a2[a2Idx];
+                a2Idx++;
             }
         }
 
