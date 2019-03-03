@@ -1,7 +1,8 @@
-package ru.skubatko.dev.java.core.stepik.case121;
+package ru.skubatko.dev.java.core.stepik.chapter1;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.skubatko.dev.java.core.stepik.chapter1.Case121;
 
 public class Case121Test {
 
