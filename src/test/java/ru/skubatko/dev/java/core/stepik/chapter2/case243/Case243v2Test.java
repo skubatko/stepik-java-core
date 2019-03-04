@@ -3,7 +3,7 @@ package ru.skubatko.dev.java.core.stepik.chapter2.case243;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Case243Test {
+public class Case243v2Test {
 
     @Test
     public void whenRolesAndTextLinesPresented_thenPrintTextPerRoleSuccess() throws Exception {
@@ -42,7 +42,7 @@ public class Case243Test {
                 "7) Господи боже! еще и с секретным предписаньем!\n";
 
         // when
-        String result = Case243.printTextPerRole(roles, textLines);
+        String result = Case243v2.printTextPerRole(roles, textLines);
 
         // then
         Assert.assertEquals("wrong result !!", expected, result);
