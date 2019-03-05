@@ -9,7 +9,6 @@ public class Case231Performance {
 
         long start = System.currentTimeMillis();
         for (int i = 0; i < REPEAT_NUMBER; i++) {
-
             Case231.isPalindrome(text);
         }
         long elapsed = System.currentTimeMillis() - start;
