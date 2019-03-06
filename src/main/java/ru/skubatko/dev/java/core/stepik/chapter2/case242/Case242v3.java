@@ -18,7 +18,7 @@ public class Case242v3 {
         int a1Idx = 0;
         int a2Idx = 0;
         for (int i = 0; i < resultSize; i++)
-            result[i] = a1Idx < a1Size && a2Idx < a2Size && a1[a1Idx] < a2[a2Idx] || a1Idx < a1Size && a2Size <= a2Idx
+            result[i] = (a2Idx == a2Size) || (a1Idx < a1Size && a1[a1Idx] < a2[a2Idx])
                     ? a1[a1Idx++]
                     : a2[a2Idx++];
 

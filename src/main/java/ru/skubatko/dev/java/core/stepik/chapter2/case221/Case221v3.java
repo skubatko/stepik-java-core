@@ -47,6 +47,7 @@ public class Case221v3 {
 
         float fb = b;
         float fc = c;
+        float fl = l;
         float fd = (float) d;
 
         double db = b;

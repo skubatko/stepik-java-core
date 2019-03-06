@@ -15,7 +15,7 @@ public class Case241RecursionV2 {
     }
 
     private static BigInteger calculateFactorial(BigInteger value) {
-        return value.equals(BigInteger.ONE)
+        return value == BigInteger.ONE
                 ? BigInteger.ONE
                 : value.multiply(calculateFactorial(value.subtract(BigInteger.ONE)));
     }
