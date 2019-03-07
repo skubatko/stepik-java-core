@@ -3,7 +3,8 @@ package ru.skubatko.dev.java.core.stepik.chapter2.case221;
 public class Case221v4 {
 
     public static void main(String[] args) {
-// BYTE Overflow & Underflow
+
+        // BYTE Overflow & Underflow
         byte byteTest = Byte.MAX_VALUE;
         byteTest++;
         System.out.println("Byte Overflow:  + Byte.MAX_VALUE +  + 1 = " + byteTest);
@@ -12,7 +13,7 @@ public class Case221v4 {
         System.out.println("Byte Underflow:  + Byte.MIN_VALUE +  - 1 = " + byteTest);
         System.out.println();
 
-// SHORT Overflow & Underflow
+        // SHORT Overflow & Underflow
         short shortTest = Short.MAX_VALUE;
         shortTest++;
         System.out.println("Short Overflow:  + Short.MAX_VALUE +  + 1 = " + shortTest);
@@ -21,7 +22,7 @@ public class Case221v4 {
         System.out.println("Short Underflow:  + Short.MIN_VALUE +  - 1 = " + shortTest);
         System.out.println();
 
-// CHAR Overflow & Underflow
+        // CHAR Overflow & Underflow
         char charTest = Character.MAX_VALUE;
         charTest++;
         System.out.println("Char Overflow:  + Character.MAX_VALUE +  + 1 = " + (int) charTest);
@@ -30,7 +31,7 @@ public class Case221v4 {
         System.out.println("Char Underflow:  + Character.MIN_VALUE +  - 1 = " + (int) charTest);
         System.out.println();
 
-// INTEGER Overflow & Underflow
+        // INTEGER Overflow & Underflow
         int intTest = Integer.MAX_VALUE;
         intTest++;
         System.out.println("Integer Overflow:  + Integer.MAX_VALUE +  + 1 = " + intTest);
@@ -39,7 +40,7 @@ public class Case221v4 {
         System.out.println("Integer Underflow:  + Integer.MIN_VALUE +  - 1 = " + intTest);
         System.out.println();
 
-// LONG Overflow & Underflow
+        // LONG Overflow & Underflow
         long longTest = Long.MAX_VALUE;
         longTest++;
         System.out.println("Long Overflow:  + Long.MAX_VALUE +  + 1 = " + longTest);
@@ -48,7 +49,7 @@ public class Case221v4 {
         System.out.println("Long Underflow:  + Long.MIN_VALUE +  - 1 = " + longTest);
         System.out.println();
 
-        // Float Overflow & Underflow
+        // FLOAT Overflow & Underflow
         float floatTest = Float.MAX_VALUE;
         floatTest++;
         System.out.println("Float Overflow:  + Float.MAX_VALUE +  + 1 = " + floatTest);
@@ -58,7 +59,7 @@ public class Case221v4 {
         System.out.println("Float Underflow:  + Float.MIN_VALUE +  - 1 = " + floatTest);
         System.out.println();
 
-        // Double Overflow & Underflow
+        // DOUBLE Overflow & Underflow
         double doubleTest = Double.MAX_VALUE;
         doubleTest++;
         System.out.println("Double Overflow:  + Double.MAX_VALUE +  + 1 = " + doubleTest);
