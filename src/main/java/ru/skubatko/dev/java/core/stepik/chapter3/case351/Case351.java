@@ -5,7 +5,7 @@ import java.util.function.DoubleUnaryOperator;
 public class Case351 {
 
     public static final int INITIAL_NUMBER_OF_STEPS = 10;
-    public static final double DEVIATION = 1.0e-6;
+    public static final double DEVIATION = 1.0e-4;
 
     public static double integrate(DoubleUnaryOperator f, double a, double b) {
         double result = 0.0;
