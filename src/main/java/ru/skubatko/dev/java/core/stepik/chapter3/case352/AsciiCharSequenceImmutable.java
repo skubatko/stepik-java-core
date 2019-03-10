@@ -1,11 +1,12 @@
 package ru.skubatko.dev.java.core.stepik.chapter3.case352;
 
-public class AsciiCharSequence implements CharSequence {
+public class AsciiCharSequenceImmutable implements CharSequence {
 
     private byte[] data;
 
-    public AsciiCharSequence(byte[] data) {
-        this.data = data;
+    public AsciiCharSequenceImmutable(byte[] data) {
+        this.data = new byte[data.length];
+        System.arraycopy(data, 0, this.data, 0, data.length);
     }
 
     public void mutate() {
@@ -29,7 +30,7 @@ public class AsciiCharSequence implements CharSequence {
         int length = end - start;
         byte[] newData = new byte[length];
         System.arraycopy(data, start, newData, 0, length);
-        return new AsciiCharSequence(newData);
+        return new AsciiCharSequenceImmutable(newData);
     }
 
     @Override
