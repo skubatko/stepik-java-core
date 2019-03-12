@@ -3,44 +3,56 @@ package ru.skubatko.dev.java.core.stepik.chapter3.case331;
 public class Case331v2 {
 
     public static void moveRobot(Robot robot, int toX, int toY) {
-        int dx = toX - robot.getX();
-        int dy = toY - robot.getY();
+        int numberOfTurnX = 0;
+        int numberOfTurnY = 0;
+        int numberOfStepsX = toX - robot.getX();
+        int numberOfStepsY = toY - robot.getY();
 
-        Direction xDirection = dx > 0 ? Direction.RIGHT : Direction.LEFT;
-        Direction yDirection = dy > 0 ? Direction.UP : Direction.DOWN;
+        Direction xDirection = (numberOfStepsX > 0) ? Direction.RIGHT : Direction.LEFT;
+        Direction yDirection = (numberOfStepsY > 0) ? Direction.UP : Direction.DOWN;
 
-        int numberOfTurnX = getNumberOfTurns(robot, xDirection);
-        int numberOfTurnY = getNumberOfTurns(robot, yDirection);
+        numberOfTurnX = getNumberOfTurns(robot, xDirection);
+        numberOfTurnY = getNumberOfTurns(robot, yDirection);
 
         if (numberOfTurnX <= numberOfTurnY) {
-            go(robot, xDirection, dx);
-            go(robot, yDirection, dy);
+            go(robot, xDirection, numberOfStepsX);
+            go(robot, yDirection, numberOfStepsY);
         } else {
-            go(robot, yDirection, dy);
-            go(robot, xDirection, dx);
+            go(robot, yDirection, numberOfStepsY);
+            go(robot, xDirection, numberOfStepsX);
         }
     }
 
     private static void go(Robot robot, Direction direction, int numberOfSteps) {
         turnRobot(robot, direction);
-        for (int i = 0; i < Math.abs(numberOfSteps); i++) robot.stepForward();
+        for (int i = 0; i < Math.abs(numberOfSteps); i++) {
+            robot.stepForward();
+        }
     }
 
     private static int getNumberOfTurns(Robot robot, Direction direction) {
         Direction currentDirection = robot.getDirection();
 
-        if (currentDirection == direction) return 0;
+        if (currentDirection == direction) {
+            return 0;
+        }
 
-        if (isTurnClockwise(direction, currentDirection)) return 1;
-        if (isTurnCounterClockwise(direction, currentDirection)) return 1;
+        if (isTurnClockwise(direction, currentDirection)) {
+            return 1;
+        }
+        if (isTurnCounterClockwise(direction, currentDirection)) {
+            return 1;
+        }
 
         return 2;
     }
 
     private static void turnRobot(Robot robot, Direction direction) {
         Direction currentDirection = robot.getDirection();
-        if (currentDirection == direction) return;
 
+        if (currentDirection == direction) {
+            return;
+        }
         if (isTurnClockwise(direction, currentDirection)) {
             robot.turnRight();
             return;
@@ -51,22 +63,26 @@ public class Case331v2 {
             return;
         }
 
-        robot.turnRight();
-        robot.turnRight();
+        turnBack(robot);
     }
 
     private static boolean isTurnClockwise(Direction direction, Direction currentDirection) {
-        return currentDirection == Direction.UP && direction == Direction.RIGHT
-                || currentDirection == Direction.RIGHT && direction == Direction.DOWN
-                || currentDirection == Direction.DOWN && direction == Direction.LEFT
-                || currentDirection == Direction.LEFT && direction == Direction.UP;
+        return ((currentDirection == Direction.UP) && (direction == Direction.RIGHT))
+                || ((currentDirection == Direction.RIGHT) && (direction == Direction.DOWN))
+                || ((currentDirection == Direction.DOWN) && (direction == Direction.LEFT))
+                || ((currentDirection == Direction.LEFT) && (direction == Direction.UP));
     }
 
     private static boolean isTurnCounterClockwise(Direction direction, Direction currentDirection) {
-        return currentDirection == Direction.UP && direction == Direction.LEFT
-                || currentDirection == Direction.LEFT && direction == Direction.DOWN
-                || currentDirection == Direction.DOWN && direction == Direction.RIGHT
-                || currentDirection == Direction.RIGHT && direction == Direction.UP;
+        return ((currentDirection == Direction.UP) && (direction == Direction.LEFT))
+                || ((currentDirection == Direction.LEFT) && (direction == Direction.DOWN))
+                || ((currentDirection == Direction.DOWN) && (direction == Direction.RIGHT))
+                || ((currentDirection == Direction.RIGHT) && (direction == Direction.UP));
+    }
+
+    private static void turnBack(Robot robot) {
+        robot.turnRight();
+        robot.turnRight();
     }
 
 }
