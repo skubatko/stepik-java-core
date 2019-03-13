@@ -16,9 +16,14 @@ public class Case421 {
             } catch (RuntimeException e) {
                 exp = e;
             }
-            if (exp != null) throw exp;
+
+            if (exp != null) {
+                throw exp;
+            }
         } while (!moved && attempt < 3);
-        if (!moved) throw new RobotConnectionException("Robot is not available");
+        if (!moved) {
+            throw new RobotConnectionException("Robot is not available");
+        }
     }
 
     public static void main(String[] args) throws Exception {

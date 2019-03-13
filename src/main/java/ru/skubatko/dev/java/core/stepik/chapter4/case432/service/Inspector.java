@@ -12,14 +12,18 @@ public class Inspector implements MailService {
 
     @Override
     public Sendable processMail(Sendable mail) {
-        if (!(mail instanceof MailPackage)) return mail;
+        if (!(mail instanceof MailPackage)) {
+            return mail;
+        }
 
         String content = ((MailPackage) mail).getContent().getContent();
-        if (WEAPONS.equals(content) || BANNED_SUBSTANCE.equals(content))
+        if (WEAPONS.equals(content) || BANNED_SUBSTANCE.equals(content)) {
             throw new IllegalPackageException();
+        }
 
-        if (content.contains("stones"))
+        if (content.contains("stones")) {
             throw new StolenPackageException();
+        }
 
         return mail;
     }

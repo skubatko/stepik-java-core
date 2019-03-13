@@ -17,13 +17,21 @@ public class MailPackage extends AbstractSendable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
 
         MailPackage that = (MailPackage) o;
 
-        if (!content.equals(that.content)) return false;
+        if (!content.equals(that.content)) {
+            return false;
+        }
 
         return true;
     }

@@ -18,17 +18,20 @@ public class Spy implements MailService {
 
     @Override
     public Sendable processMail(Sendable mail) {
-        if (!(mail instanceof MailMessage)) return mail;
+        if (!(mail instanceof MailMessage)) {
+            return mail;
+        }
 
         logger.setLevel(Level.ALL);
 
         String from = mail.getFrom();
         String to = mail.getTo();
-        if (AUSTIN_POWERS.equals(from) || AUSTIN_POWERS.equals(to))
+        if (AUSTIN_POWERS.equals(from) || AUSTIN_POWERS.equals(to)) {
             logger.log(Level.WARNING, "Detected target mail correspondence: from {0} to {1} \"{2}\"",
                     new Object[]{from, to, ((MailMessage) mail).getMessage()});
-        else
+        } else {
             logger.log(Level.INFO, "Usual correspondence: from {0} to {1}", new Object[]{from, to});
+        }
 
         return mail;
     }

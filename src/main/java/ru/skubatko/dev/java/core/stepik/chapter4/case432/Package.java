@@ -22,13 +22,21 @@ public class Package {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Package aPackage = (Package) o;
 
-        if (price != aPackage.price) return false;
-        if (!content.equals(aPackage.content)) return false;
+        if (price != aPackage.price) {
+            return false;
+        }
+        if (!content.equals(aPackage.content)) {
+            return false;
+        }
 
         return true;
     }
