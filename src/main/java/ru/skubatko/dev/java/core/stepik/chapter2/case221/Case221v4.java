@@ -53,7 +53,8 @@ public class Case221v4 {
         float floatTest = Float.MAX_VALUE;
         floatTest++;
         System.out.println(String.format("Float Overflow:  + Float.MAX_VALUE = %.32f", Float.MAX_VALUE));
-        System.out.println(String.format("Float Overflow:  + Float.MAX_VALUE +  + 1 = %.32f", floatTest));
+        System.out.println(String.format("Float Overflow:  + Float.MAX_VALUE +  + 1 = %.32f", Float.MAX_VALUE + 1));
+        System.out.println(String.format("Float Overflow:  + Float.MAX_VALUE +  + Math.nextUp = %.32f", Math.nextUp(floatTest)));
         System.out.println("Float Overflow:  + Float.MAX_VALUE +  ^ 2 = " + floatTest * floatTest);
         floatTest = Float.MIN_VALUE;
         floatTest--;
