@@ -2,29 +2,29 @@
 
 Подключение к роботу представляется в программе интерфейсом RobotConnection:
 
-``
+````
 public interface RobotConnection extends AutoCloseable {
     void moveRobotTo(int x, int y);
     @Override
     void close();
 }
-``
+````
 
 Да, робот с тех пор поумнел и стал понимать команду на перемещение в заданную точку (метод moveRobotTo). Ему больше не нужны пошаговые инструкции.
 RobotConnection — это временно устанавливаемое соединение, которое надо закрывать, когда оно больше не нужно. Для закрытия соединения в интерфейсе есть метод close().
 
 За установку соединения отвечает RobotConnectionManager:
 
-``
+````
 public interface RobotConnectionManager {
     RobotConnection getConnection();
 }
-``
+````
 
 Метод getConnection() делает попытку соединиться с роботом и возвращает установленное соединение, через которое можно отдавать роботу команды.
 Установка соединения может завершиться неуспешно, а также уже установленное соединение может внезапно разорваться. Всякое бывает. Поэтому любой метод RobotConnectionManager и RobotConnection может бросить непроверяемое исключение RobotConnectionException:
 
-``
+````
 public class RobotConnectionException extends RuntimeException {
 
     public RobotConnectionException(String message) {
@@ -36,7 +36,7 @@ public class RobotConnectionException extends RuntimeException {
         super(message, cause);
     }
 }
-``
+````
 
 Ваша задача — реализовать метод который устанавливает соединение с роботом, отдает ему команду на перемещение в заданную точку и затем закрывает соединение, выполняя при необходимости повтор этой последовательности до трех раз.
 
