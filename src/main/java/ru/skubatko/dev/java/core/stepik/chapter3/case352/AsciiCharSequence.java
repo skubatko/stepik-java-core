@@ -1,5 +1,7 @@
 package ru.skubatko.dev.java.core.stepik.chapter3.case352;
 
+import java.util.Arrays;
+
 public class AsciiCharSequence implements CharSequence {
 
     private byte[] data;
@@ -34,7 +36,8 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public String toString() {
-        return new String(data);
+        return "AsciiCharSequence{" +
+                "data=" + Arrays.toString(data) +
+                '}';
     }
-
 }
