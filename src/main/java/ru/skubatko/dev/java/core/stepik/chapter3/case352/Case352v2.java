@@ -2,7 +2,7 @@ package ru.skubatko.dev.java.core.stepik.chapter3.case352;
 
 import java.util.Arrays;
 
-public class Case352V2 {
+public class Case352v2 {
     public static void main(String[] args) {
         byte[] data = new byte[]{1, 2, 3, 4, 5};
 
