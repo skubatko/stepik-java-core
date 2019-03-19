@@ -15,7 +15,7 @@ public class Case421v3 {
                 if (connection != null) {
                     try {
                         connection.close();
-                    } catch (RuntimeException e) {
+                    } catch (RobotConnectionException e) {
                         // no action
                     }
                 }

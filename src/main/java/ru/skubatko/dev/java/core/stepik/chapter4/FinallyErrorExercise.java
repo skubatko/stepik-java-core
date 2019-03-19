@@ -24,7 +24,7 @@ public class FinallyErrorExercise {
             closable = new TestClosable();
             System.out.println("try");
             cycle();
-        } catch (Exception | Error e) {
+        } catch ( Error e) {
             System.out.println("catch");
         } finally {
             System.out.println("finally");
