@@ -1,24 +1,24 @@
 package ru.skubatko.dev.java.core.stepik.chapter6.case611;
 
-class Pair<K, V> {
+class Pair<T, U> {
 
-    private K first;
-    private V second;
+    private T first;
+    private U second;
 
-    private Pair(K first, V second) {
+    private Pair(T first, U second) {
         this.first = first;
         this.second = second;
     }
 
-    public static <K, V> Pair<K, V> of(K first, V second) {
+    public static <T, U> Pair<T, U> of(T first, U second) {
         return new Pair<>(first, second);
     }
 
-    public K getFirst() {
+    public T getFirst() {
         return first;
     }
 
-    public V getSecond() {
+    public U getSecond() {
         return second;
     }
 
