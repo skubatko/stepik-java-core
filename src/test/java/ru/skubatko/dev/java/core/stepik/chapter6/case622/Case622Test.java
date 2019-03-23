@@ -79,4 +79,38 @@ public class Case622Test {
         Assert.assertEquals("wrong result!!", "6 4 2\n", result);
     }
 
+    @Test
+    public void whenEmptyInputMap_thenSuccess() {
+        // given
+        InputStream in = new ByteArrayInputStream("".getBytes());
+        System.setIn(in);
+        OutputStream out = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(out);
+        System.setOut(ps);
+
+        // when
+        Case622.printEvenNumbersWithMap();
+        String result = out.toString();
+
+        // then
+        Assert.assertEquals("wrong result!!", "\n", result);
+    }
+
+    @Test
+    public void whenPrintWithMap_thenSuccess() {
+        // given
+        InputStream in = new ByteArrayInputStream("1 2 3 4 5 6 7".getBytes());
+        System.setIn(in);
+        OutputStream out = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(out);
+        System.setOut(ps);
+
+        // when
+        Case622.printEvenNumbersWithMap();
+        String result = out.toString();
+
+        // then
+        Assert.assertEquals("wrong result!!", "6 4 2\n", result);
+    }
+
 }
