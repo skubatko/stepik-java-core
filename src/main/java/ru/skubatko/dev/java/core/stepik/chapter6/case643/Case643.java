@@ -3,8 +3,11 @@ package ru.skubatko.dev.java.core.stepik.chapter6.case643;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 import java.util.TreeMap;
+import java.util.function.Function;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Case643 {
 
@@ -27,8 +30,17 @@ public class Case643 {
                 .forEach(e -> System.out.println(e.getKey()));
     }
 
-    public static void main(String[] args) {
-        topTenWords();
+    public static void topTenWordsV2() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
+        br.lines()
+                .map(String::toLowerCase)
+                .flatMap(Pattern.compile("\\W+", Pattern.UNICODE_CHARACTER_CLASS)::splitAsStream)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey()))
+                .limit(10)
+                .map(Map.Entry::getKey)
+                .forEach(System.out::println);
     }
 
 }

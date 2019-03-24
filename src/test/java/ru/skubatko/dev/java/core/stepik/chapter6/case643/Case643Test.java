@@ -23,7 +23,7 @@ public class Case643Test {
                 "раму\n";
 
         // when
-        Case643.topTenWords();
+        Case643.topTenWordsV2();
         String result = out.toString();
 
         // then
@@ -57,7 +57,7 @@ public class Case643Test {
                 "mi\n";
 
         // when
-        Case643.topTenWords();
+        Case643.topTenWordsV2();
         String result = out.toString();
 
         // then
